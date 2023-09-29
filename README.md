@@ -13,3 +13,7 @@
 4. `npm run start` を実行してプロジェクトを開始します。
 
 5. コーディングを始めましょう。
+
+
+https://vercel.com/0xkf/eth-yield-farm-client 
+上記urlにデプロイ済み。
