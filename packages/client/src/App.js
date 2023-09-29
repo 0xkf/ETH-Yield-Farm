@@ -25,7 +25,7 @@ function App() {
   const tokenfarmAddress = '0xD8DD26b1f6B59625EC7BAB3C0502121D2113E988';
 
   //ウォレットアドレス(コントラクトの保持者)を記載
-  const walletAddress = '0x04CD057E4bAD766361348F26E847B546cBBc7946';
+  const walletAddress = '0x760391655Cd314984b02d2776f4fc1F1648cE85E';
 
   /* ABIの内容を参照する変数を作成 */
   const daiTokenABI = daiAbi.abi;
@@ -243,14 +243,14 @@ function App() {
             className="w-full h-14 bg-blue-500 text-white m-3 flex justify-center items-center"
             onClick={stake}
           >
-            Stake!
+            Stake!!!
           </div>
           <div className="text-blue-400" onClick={unStake}>
             UN-STAKE..
           </div>
           {currentAccount.toUpperCase() === walletAddress.toUpperCase() ? (
             <>
-              <div className="text-xl pt-20">Transfer 100 DAI</div>
+              <div className="text-xl pt-20">Transfer 100 DAI!!</div>
               <div className="felx-row w-full flex justify-between items-end px-20 py-3">
                 <input
                   placeholder="0x..."
