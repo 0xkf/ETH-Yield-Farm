@@ -143,29 +143,29 @@ function App() {
   };
 
   // ウォレット接続を確認する関数
-  const checkIfWalletIsConnected = async () => {
-    try {
-      const { ethereum } = window;
-      if (!ethereum) {
-        console.log('Make sure you have MetaMask!');
-        return;
-      } else {
-        console.log('We have the ethereum object', ethereum);
-      }
-      /* ユーザーのウォレットへのアクセスが許可されているかどうかを確認 */
-      const accounts = await ethereum.request({ method: 'eth_accounts' });
-      if (accounts.length !== 0) {
-        const account = accounts[0];
-        console.log('Found an authorized account:', account);
-        setCurrentAccount(account);
-        getBalance();
-      } else {
-        console.log('No authorized account found');
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const checkIfWalletIsConnected = async () => {
+  //   try {
+  //     const { ethereum } = window;
+  //     if (!ethereum) {
+  //       console.log('Make sure you have MetaMask!');
+  //       return;
+  //     } else {
+  //       console.log('We have the ethereum object', ethereum);
+  //     }
+  //     /* ユーザーのウォレットへのアクセスが許可されているかどうかを確認 */
+  //     const accounts = await ethereum.request({ method: 'eth_accounts' });
+  //     if (accounts.length !== 0) {
+  //       const account = accounts[0];
+  //       console.log('Found an authorized account:', account);
+  //       setCurrentAccount(account);
+  //       getBalance();
+  //     } else {
+  //       console.log('No authorized account found');
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   // ウォレットに接続する関数
   // const connectWallet = async () => {
@@ -186,9 +186,9 @@ function App() {
   // };
 
   // リロードごとにウォレット接続を確認する
-  useEffect(() => {
-    checkIfWalletIsConnected();
-  });
+  // useEffect(() => {
+  //   checkIfWalletIsConnected();
+  // });
 
   return (
     <div className="h-screen w-screen flex-col flex">
