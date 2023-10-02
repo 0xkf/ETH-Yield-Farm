@@ -7,6 +7,8 @@ import dappAbi from './abis/DappToken.json';
 import tokenfarmAbi from './abis/TokenFarm.json';
 import './App.css';
 
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 function App() {
   /* ユーザーのパブリックウォレットを保存するために使用する状態変数を定義 */
   const [currentAccount, setCurrentAccount] = useState('');
@@ -166,22 +168,22 @@ function App() {
   };
 
   // ウォレットに接続する関数
-  const connectWallet = async () => {
-    try {
-      const { ethereum } = window;
-      if (!ethereum) {
-        console.error('Get MetaMask!');
-        return;
-      }
-      const accounts = await ethereum.request({
-        method: 'eth_requestAccounts',
-      });
-      console.log('Connected: ', accounts[0]);
-      setCurrentAccount(accounts[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const connectWallet = async () => {
+  //   try {
+  //     const { ethereum } = window;
+  //     if (!ethereum) {
+  //       console.error('Get MetaMask!');
+  //       return;
+  //     }
+  //     const accounts = await ethereum.request({
+  //       method: 'eth_requestAccounts',
+  //     });
+  //     console.log('Connected: ', accounts[0]);
+  //     setCurrentAccount(accounts[0]);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   // リロードごとにウォレット接続を確認する
   useEffect(() => {
@@ -196,12 +198,21 @@ function App() {
           <div className="text-white text-3xl">ETH Yield Farm</div>
         </div>
         {currentAccount === '' ? (
-          <button
-            className="text-white mr-10 px-3 py-1 text-2xl border-solid border-2 border-white flex items-center justify-center"
-            onClick={connectWallet}
-          >
-            Connect Wallet
-          </button>
+          // <button
+          //   className="text-white mr-10 px-3 py-1 text-2xl border-solid border-2 border-white flex items-center justify-center"
+          //   onClick={connectWallet}
+          // >
+          //   Connect Wallet
+          // </button>
+          <div
+          style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+            padding: 12,
+          }}
+        >
+          <ConnectButton />
+        </div>
         ) : (
           <div className="text-gray-400 text-lg pr-5">{currentAccount}</div>
         )}
